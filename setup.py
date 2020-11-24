@@ -1,3 +1,4 @@
+import setuptools
 from distutils.core import setup
 from TwitterAPI import __version__
 import io
@@ -13,16 +14,16 @@ def read(*filenames, **kwargs):
     return sep.join(buf)
 
 setup(
-    name='TwitterAPI',
+    name='TwitterAPI-dylancaponi',
     version=__version__,
     author='geduldig',
     author_email='boxnumber03@gmail.com',
-    packages=['TwitterAPI'],
+    packages=setuptools.find_packages(),
     package_data={'': ['credentials.txt']},
     url='https://github.com/geduldig/TwitterAPI',
-    download_url='https://github.com/geduldig/TwitterAPI/tarball/master',
+    download_url='https://github.com/dylancaponi/TwitterAPI/tarball/master',
     license='MIT',
     keywords='twitter',
-    description='Minimal wrapper for Twitter\'s REST and Streaming APIs',
-    install_requires=['requests', 'requests_oauthlib']
+    description='Patch for geduldig/TwitterAPI because Google Cloud Functions do not like Github forks',
+    # install_requires=['requests', 'requests_oauthlib']
 )
