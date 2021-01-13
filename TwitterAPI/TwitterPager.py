@@ -116,7 +116,7 @@ class TwitterPager(object):
                     if new_tweets:
                         self.params['since_id'] = meta['newest_id']
                     else:
-                        self.params['next_token'] = meta['next_token']
+                        self.params['pagination_token'] = meta['next_token']
 
             except TwitterRequestError as e:
                 if e.status_code < 500:
