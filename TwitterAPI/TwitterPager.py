@@ -93,8 +93,8 @@ class TwitterPager(object):
                     meta = data['meta']
                     print(meta)
                     # Test if this is stopping ingestion past 22 results
-                    if (not new_tweets and not 'next_token' in meta): #\
-                            #or ('result_count' in meta and meta['result_count'] == 0):
+                    if (not new_tweets and not 'next_token' in meta)
+                            or ('result_count' in meta and meta['result_count'] == 0):
                         break
 
                 # SLEEP...
