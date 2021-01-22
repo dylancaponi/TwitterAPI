@@ -93,8 +93,8 @@ class TwitterPager(object):
                     meta = data['meta']
                     # Break if next_token but no results
                     print(meta)
-                    if (not new_tweets and not 'next_token' in meta): # \
-#                             or ('result_count' in meta and meta['result_count'] == 0):
+                    if (not new_tweets and not 'next_token' in meta) \
+                            or ('result_count' in meta and meta['result_count'] == 0):
                         break
 
                 # SLEEP...
