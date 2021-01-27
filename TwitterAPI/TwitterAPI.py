@@ -295,8 +295,6 @@ class _RestIterable(object):
             self.results = resp['errors']
         elif 'includes' in resp:
             self.results = [resp]
-        elif 'includes' in resp:
-            self.results = [resp]
         elif 'statuses' in resp:
             self.results = resp['statuses']
         elif 'users' in resp:
