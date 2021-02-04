@@ -83,7 +83,8 @@ class TwitterPager(object):
                             cursor_param = 'next'
 
                     # bail when no more results
-                    if cursor == 0:
+                     # Ads api returns 'next_cursor': None
+                    if cursor == 0 or not cursor:
                         break
                     elif cursor == -1 and is_premium_search:
                         break
