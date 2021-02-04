@@ -1,11 +1,11 @@
 """
-	Constants For All Twitter Endpoints
-	-----------------------------------
-	
-	Version 1.1, Streaming API and REST API.
-	
-	URLs for each endpoint are composed of the following pieces:
-		PROTOCOL://{subdomain}.DOMAIN/VERSION/{resource}?{parameters}
+    Constants For All Twitter Endpoints
+    -----------------------------------
+    
+    Version 1.1, Streaming API and REST API.
+    
+    URLs for each endpoint are composed of the following pieces:
+        PROTOCOL://{subdomain}.DOMAIN/VERSION/{resource}?{parameters}
 """
 
 
@@ -246,6 +246,7 @@ ENDPOINTS = {
     'tweets/search/stream/rules':                           ('POST',   'api'), # use method_override for 'GET'
     'users':                                                ('GET',    'api'),
     'users/:PARAM':                                         ('GET',    'api'), # ID
+    'users/:PARAM/tweets':                                  ('GET',    'api'), # ID
     'users/by':                                             ('GET',    'api'),
     'users/by/username/:PARAM':                             ('GET',    'api'), # USERNAME
 }

@@ -92,7 +92,7 @@ class TwitterPager(object):
                         break
                 else: # VERSION 2
                     meta = data['meta']
-                    print(meta['result_count'])
+                    # Break if next_token but no results
                     if (not new_tweets and not 'next_token' in meta) \
                             or ('result_count' in meta and meta['result_count'] == 0):
                         break
@@ -119,7 +119,7 @@ class TwitterPager(object):
                     if new_tweets:
                         self.params['since_id'] = meta['newest_id']
                     else:
-                        self.params['next_token'] = meta['next_token']
+                        self.params['pagination_token'] = meta['next_token']
 
             except TwitterRequestError as e:
                 if e.status_code < 500:
