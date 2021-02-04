@@ -73,9 +73,8 @@ class TwitterPager(object):
                     if new_tweets and 'previous_cursor' in data:
                         cursor = data['previous_cursor']
                         cursor_param = 'cursor'
-                    elif not new_tweets:
-                        # Ads api returns 'next_cursor': None
-                        if 'next_cursor' in data and data['next_cursor']:
+                    elif not new_tweets
+                        if 'next_cursor' in data:
                             cursor = data['next_cursor']
                             cursor_param = 'cursor'
                         elif 'next' in data:
@@ -84,7 +83,8 @@ class TwitterPager(object):
                             cursor_param = 'next'
 
                     # bail when no more results
-                    if cursor == 0:
+                     # Ads api returns 'next_cursor': None
+                    if cursor == 0 or not cursor:
                         break
                     elif cursor == -1 and is_premium_search:
                         break
