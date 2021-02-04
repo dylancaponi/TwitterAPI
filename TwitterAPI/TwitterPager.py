@@ -73,7 +73,7 @@ class TwitterPager(object):
                     if new_tweets and 'previous_cursor' in data:
                         cursor = data['previous_cursor']
                         cursor_param = 'cursor'
-                    elif not new_tweets
+                    elif not new_tweets:
                         if 'next_cursor' in data:
                             cursor = data['next_cursor']
                             cursor_param = 'cursor'
