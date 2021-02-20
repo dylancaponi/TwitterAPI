@@ -91,12 +91,11 @@ class TwitterPager(object):
                     elif not new_tweets and item_count == 0:
                         break
                 else: # VERSION 2
-                    if 'meta' in data:
-                        meta = data['meta']
-                    else:
+                    if 'meta' not in data:
                         break
+                    meta = data['meta']
                     # Break if next_token but no results
-                    if (not new_tweets and not 'next_token' in meta) \
+                    if (not new_tweets and 'next_token' not in meta) \
                             or ('result_count' in meta and meta['result_count'] == 0):
                         break
 
